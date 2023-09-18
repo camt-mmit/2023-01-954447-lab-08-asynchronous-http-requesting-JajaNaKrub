@@ -1,0 +1,22 @@
+.search-bar {
+  color: black;
+}
+button {
+  color: white;
+  background-color: black;
+  border: 3px solid white;
+}
+.page-bar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+button:hover {
+  color: yellow;
+  border: 3px solid yellow;
+}
+button:disabled {
+  color: white;
+  border: 0px solid white;
+}

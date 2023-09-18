@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'SF Distant Galaxy', sans-serif;
+  color: aliceblue;
+}
+body {
+  background-color: black;
+}
+h1 {
+  text-align: center;
+}
+a:hover {
+  color: yellow;
+  text-decoration: underline double 2px yellow;
+}
+.main-nav ul {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+li {
+  list-style: none;
+}
