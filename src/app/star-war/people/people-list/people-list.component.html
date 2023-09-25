@@ -28,5 +28,7 @@
 </form>
 <ng-template #notFound><h3>NotFound ! ! !</h3></ng-template>
 <ul>
-  <li *ngFor="let item of data.results">{{ item.name }}</li>
+  <li *ngFor="let item of data.results">
+    <a class='select-cha' [routerLink]="getId(item.url)">{{ item.name }}</a>
+  </li>
 </ul>

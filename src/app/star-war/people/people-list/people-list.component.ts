@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { List, Person, SearchData } from '../../models';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-people-list',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './people-list.component.html',
   styleUrls: ['./people-list.component.scss'],
 })
@@ -39,6 +40,10 @@ export class PeopleListComponent {
 
   protected get pages(): number {
     return Math.ceil(this.data.count / 10);
+  }
+
+  protected getId(url: URL): string {
+    return url.pathname.replace(/\/$/, '').split('/').pop() ?? '';
   }
 
   protected doSearchDataChange(): void {

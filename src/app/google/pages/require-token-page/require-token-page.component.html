@@ -1,0 +1,5 @@
+<p>require-token-page works!</p>
+<a *ngIf="authUrl$ | async as authUrl; else loading" href="{{ authUrl }}"
+  >Login Google</a
+>
+<ng-template #loading> Loading . . . </ng-template>

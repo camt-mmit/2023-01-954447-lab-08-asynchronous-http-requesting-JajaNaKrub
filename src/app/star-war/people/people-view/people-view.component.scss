@@ -1,0 +1,15 @@
+dl {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+dt {
+  display: block;
+  margin-top: 1ch;
+  color: yellow;
+}
+dd {
+  display: block;
+  text-align: right;
+}
