@@ -10,5 +10,5 @@ import { Person } from '../../models';
   styleUrls: ['./people-view.component.scss'],
 })
 export class PeopleViewComponent {
-  @Input({ required: true }) data!: Person;
+
 }
