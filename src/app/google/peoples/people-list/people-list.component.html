@@ -1,0 +1,16 @@
+<mat-list>
+  <mat-list-item *ngFor="let connection of data.connections">
+    <img
+      matListItemAvatar
+      [src]="urlPhotos(connection.photos ?? [])"
+      alt="image of {{ displayName(connection.names ?? []) }}"
+    />
+    <div matListItemTitle>{{ displayName(connection.names ?? []) }}</div>
+    <div matListItemLine>
+      {{ displayEmailAddress(connection.emailAddresses ?? []) }}
+    </div>
+    <p matListItemLine>
+      {{ displayPhoneNumber(connection.phoneNumbers ?? []) }}
+    </p>
+  </mat-list-item>
+</mat-list>

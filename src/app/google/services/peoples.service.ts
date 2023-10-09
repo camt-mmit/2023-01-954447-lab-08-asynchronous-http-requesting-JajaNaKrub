@@ -2,40 +2,41 @@ import { Injectable, inject } from '@angular/core';
 import { Observable, map, switchMap } from 'rxjs';
 import {
   EventFormData,
-  EventQueryParams,
-  EventResource,
-  EventsList,
-  parseEventsList,
+  ConnectionsListParams,
+  ConnectionsList,
+  parseConnectionsList,
+  Person,
+  PersonFormData,
 } from '../models';
 import { TokenService } from './token.service';
 import { HttpClient } from '@angular/common/http';
 
-const url =
-  'https://www.googleapis.com/calendar/v3/calendars/primary/events' as const;
+const url = 'https://people.googleapis.com/v1/people/me/connections' as const;
+const url2 = 'https://people.googleapis.com/v1/people:createContact' as const;
 @Injectable({
   providedIn: 'root',
 })
-export class EventsService {
+export class PeoplesService {
   private readonly http = inject(HttpClient);
   private readonly tokenService = inject(TokenService);
-  getAll(params?: EventQueryParams): Observable<EventsList> {
+  getAll(params?: ConnectionsListParams): Observable<ConnectionsList> {
     return this.tokenService.getAuthorizationHeader().pipe(
       switchMap((authorizationHeader) =>
-        this.http.get<EventsList>(url, {
+        this.http.get<ConnectionsList>(url, {
           headers: {
             Authorization: authorizationHeader,
           },
           params,
         }),
       ),
-      map((eventsList) => parseEventsList(eventsList)),
+      map(parseConnectionsList),
     );
   }
 
-  create(eventFormData: EventFormData): Observable<EventResource> {
+  create(personFormData: PersonFormData): Observable<Person> {
     return this.tokenService.getAuthorizationHeader().pipe(
       switchMap((authorizationHeader) =>
-        this.http.post<EventResource>(url, eventFormData, {
+        this.http.post<Person>(url2, personFormData, {
           headers: {
             Authorization: authorizationHeader,
           },

@@ -1,8 +1,16 @@
 <h1>{{ title }}</h1>
 <nav class="main-nav">
   <ul>
-    <li><a routerLink="people">Star War</a></li>
-    <li><a routerLink="google">Google</a></li>
+    <li>
+      <a mat-stroked-button routerLink="star-war"
+        ><mat-icon>rocket</mat-icon> Star War</a
+      >
+    </li>
+    <li>
+      <a mat-stroked-button routerLink="google"
+        ><mat-icon>public</mat-icon>Google</a
+      >
+    </li>
   </ul>
 </nav>
 <router-outlet></router-outlet>

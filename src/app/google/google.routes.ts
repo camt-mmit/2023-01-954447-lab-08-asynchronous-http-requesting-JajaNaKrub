@@ -4,6 +4,8 @@ import { RequireTokenPageComponent } from './pages/require-token-page/require-to
 import { AuthorizationPageComponent } from './pages/authorization-page/authorization-page.component';
 import { EventsListPageComponent } from './pages/events/events-list-page/events-list-page.component';
 import { EventCreatePageComponent } from './pages/events/event-create-page/event-create-page.component';
+import { PeopleListPageComponent } from './pages/peoples/people-list-page/people-list-page.component';
+import { PeopleCreatePageComponent } from './pages/peoples/people-create-page/people-create-page.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +28,19 @@ export const routes: Routes = [
               {
                 path: 'create',
                 component: EventCreatePageComponent,
+              },
+            ],
+          },
+          {
+            path: 'contact',
+            children: [
+              {
+                path: '',
+                component: PeopleListPageComponent,
+              },
+              {
+                path: 'create',
+                component: PeopleCreatePageComponent,
               },
             ],
           },

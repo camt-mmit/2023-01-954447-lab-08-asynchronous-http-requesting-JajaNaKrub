@@ -187,6 +187,16 @@ export type EventQueryParams = {
   updatedMin?: datetime; // Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.
 };
 
+export type EventFormData = {
+  summary: string;
+  start: {
+    date: date;
+  };
+  end: {
+    date: date;
+  };
+};
+
 /**
  * Parser Functions
  */

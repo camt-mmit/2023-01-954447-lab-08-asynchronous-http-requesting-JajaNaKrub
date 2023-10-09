@@ -353,6 +353,16 @@ export type CreateContactParams = {
   sources?: SourceType[];
 };
 
+// export type PersonFormData = {
+//   names: Name[];
+// };
+
+export type PersonFormData = {
+  emailAddresses?: EmailAddress[];
+  names?: Name[];
+  phoneNumbers?: PhoneNumber[];
+};
+
 /**
  * Parser Functions
  */

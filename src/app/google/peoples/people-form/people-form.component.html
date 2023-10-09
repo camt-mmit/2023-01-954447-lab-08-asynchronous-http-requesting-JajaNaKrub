@@ -1,0 +1,46 @@
+<form [formGroup]="formGroup" (ngSubmit)="doSubmit()">
+  <mat-form-field color="primary" appearance="outline">
+    <mat-label>Name</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="names"
+      required
+      placeholder="Input name"
+    />
+    <mat-hint>The Name of contact.</mat-hint>
+    <mat-error>Required!</mat-error> </mat-form-field
+  ><mat-form-field color="primary" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="emailAddresses"
+      required
+      placeholder="Input Email"
+    />
+    <mat-hint>The Email of contact.</mat-hint>
+    <mat-error>Required!</mat-error> </mat-form-field
+  ><mat-form-field color="primary" appearance="outline">
+    <mat-label>Phone</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="phoneNumbers"
+      required
+      placeholder="Input phone number"
+    />
+    <mat-hint>The Phone number of contact.</mat-hint>
+    <mat-error>Required!</mat-error>
+  </mat-form-field>
+  <div>
+    <button type="submit" mat-stroked-button>
+      <mat-icon> add </mat-icon>
+      Create
+    </button>
+    <button type="submit" mat-stroked-button (click)="back()">
+      <mat-icon> arrow_back </mat-icon>
+      Back
+    </button>
+  </div>
+</form>
